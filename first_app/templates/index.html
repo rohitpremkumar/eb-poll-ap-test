@@ -1,79 +1,129 @@
-<html>
-<head>
-	<meta charset="utf-8">
-  	<meta name="viewport" content="width=device-width, initial-scale=1">
-  	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-  	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-  	{% load static %}
-  	<link rel="stylesheet" href="{% static 'css/styles.css' %}">
-</head>
-<body>
-  <nav>
-	<h1>Rohit Premkumar</h1>
-	<div class="nav-bar">
-	  <div class="nav-button">
-		BACKGROUND
-	  </div>
-	   <div class="nav-button">
-		PORTFOLIO
-	  </div>
-	   <div class="nav-button">
-		CONTACT
-	  </div>
-	</div>
-  </nav>
-<div class="container">
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    {% load static %}
+    <a href="#" id="Background"></a>
+    <title>Portfolio</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-danger sticky-top" id="nav1">
+      <h1 class="text-white">Rohit Premkumar</h1>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+        <div class="navbar-nav nav-pills">
+          <a class="nav-item nav-link" href="#Background">Background</a>
+          <a class="nav-item nav-link" href="#Portfolio">Portfolio</a>
+          <a class="nav-item nav-link" href="#Contact">Contact</a>
+        </div>
+      </div>
+    </nav>
 
- <div class="background text-center" id="my-background">
-	<h2 class="text-center">BACKGROUND</h2>
-	<div class="background-flex">
-	<img class="" src="https://www.cheatsheet.com/wp-content/uploads/2017/09/kim-jong-un-4.jpg" alt="none">
-	<div class=""> 
-	<p class="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet eaque vero quis! Porro, incidunt! Hic nobis tempore a voluptatum, magni aliquid tempora ab sequi unde ipsa explicabo doloribus corrupti ullam!lorem Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet provident quas ipsa dolorum molestiae nisi quae a repudiandae tempora dolorem? Optio aliquam nostrum ad cupiditate alias eveniet deserunt ducimus recusandae.
-	  </p><h3>Web Developer | Data Scientist | Investor</h3>
-	  <p></p>
+    <div id="hello" class="" data-spy="scroll" data-target="#nav1" offset="0" style="position:relative">
+    <!-- Background-->
+      <h1 class="text-center mt-4 text-danger">Background</h1>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm text-center">
+            <img src="{% static 'assets/me.jpeg' %}" class="img-fluid rounded-circle mt-5" style="width:250px" alt="A generic square placeholder image with rounded corners in a figure.">
+          </div>
+          <div class="col-sm m-5 text-secondary">
+            <p>
+              My name is Rohit Premkumar and I graduated from the New Jersey Institute of Technology with the intention of going to medical school one day. However, I had realized that I am more passionate about creating web applications and communicating data. I have taken a number of courses on data science covering topics including: wrangling, visualization, machine learning primarily with python. In addition, I have experience with full stack web development including this website which uses a Django back-end running on AWS Elastic Beanstalk and a Boostrap front-end. Investing in equities is a hobby that I have used to build an impressive portfolio and gain valuable insight into the financial world.
+            </p>
+            <h5>My overarching goal is to work in the FinTech sector, developing applications that help high-profile traders and the average-joe(like me) make more intelligent investment decisions.</h5>
+              <a href="#" id="Portfolio"></a>
+          </div>
+        </div>
+        <h3 class="text-center">Data Scientist | Web Developer | Investor</h3>
+
+      <!-- Portfolio -->
+      <h1 class="text-center text-danger mt-5">Portfolio</h1>
+      <div class="row">
+        <div class="col-sm">
+          <a style="text-decoration:none;" href="https://www.kaggle.com/rohitpremkumar/titanic-ml-exploration">
+          <div class="card mt-2 mb-2 mx-auto" style="width: 18rem;">
+            <div class="mx-auto" style="height:200px">
+              <img class="card-img-top mt-3" src="{% static 'assets/kaggle.png' %}" alt="Card image cap" style="height:200px; width:auto;">
+            </div>
+            <div class="card-body text-dark" style="text-decoration:none;">
+              <h5 class="card-title">Titanic Survivorship</h5>
+              <p class="card-text">An examination of Titanic passenger data to extract survivorship patterns.</p>
+            </div>
+          </div>
+          </a>
+        </div>
+        <div class="col-sm">
+          <a href="https://www.kaggle.com/rohitpremkumar/monkey-species-identification" style="text-decoration:none;">
+          <div class="card mt-2 mb-2 mx-auto" style="width: 18rem;">
+            <div class="mx-auto" style="height:200px">
+              <img class="card-img-top mt-3" src="{% static 'assets/kaggle.png' %}" alt="Card image cap" style="height:200px; width:auto;">
+            </div>
+            <div class="card-body text-dark">
+              <h5 class="card-title">Monkey Species</h5>
+              <p class="card-text">Used Tensorflow to create model capable of recognizing monkey species with high accuracy.</p>
+            </div>
+          </div>
+          </a>
+        </div>
+        <div class="col-sm">
+          <a href="https://github.com/rohitpremkumar/portfolio-fullstack" style="text-decoration:none;">
+            <div class="card mt-2 mb-2 mx-auto" style="width: 18rem;">
+              <img class="card-img-top mx-auto" src="{% static 'assets/GitHub-Mark.png' %}" alt="Card image cap" style="height:200px; width:auto;">
+              <div class="card-body text-dark">
+                <h5 class="card-title">Webpage Source Code</h5>
+                <p class="card-text">Source code used to build this website. This repo contains the front-end and back-end code.</p>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-sm">
+          <a href="https://github.com/rohitpremkumar/crime_data" style="text-decoration:none;">
+          <div class="card mt-2 mb-2 mx-auto" style="width: 18rem;">
+            <img class="card-img-top mx-auto" src="{% static 'assets/GitHub-Mark.png' %}" alt="Card image cap" style="width:200px">
+            <div class="card-body text-dark">
+              <h5 class="card-title">NYC Demographics</h5>
+              <p class="card-text">Exploration of public NYC crime, education and demographic data. Includes basic web scraping.</p>
+            </div>
+          </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Contact -->
+      <a href="#" id="Contact"></a>
+      <h1 class="text-center text-danger mt-5">Contact</h1>
+      <div class="mx-auto mb-5" style="width:250px">
+        <form>
+          <div class="form-group">
+            <label for="inputName">Name</label>
+            <input type="text" class="form-control" id="inputName" placeholder="Enter name">
+          </div>
+          <div class="form-group">
+            <label for="inputEmail">Email address</label>
+            <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp" placeholder="Enter email">
+          </div>
+          <div class="form-group">
+            <label for="inputTopic">Topic</label>
+            <input type="text" class="form-control" id="inputTopic" placeholder="Enter topic">
+          </div>
+          <div class="form-group">
+            <label for="inputMessage">Message</label>
+            <input type="text" class="form-control input-lg" id="inputMessage" placeholder="Enter message">
+          </div>
+          <button type="submit" class="btn btn-warning text-white">Submit</button>
+        </form>
+      </div>
+      <h4 class="text-center text-secondary">This webpage is currently under-development.</h4>
+    </div>
   </div>
-	</div>
-	
-	</div>
-  <div class="portfolio" id="my-portfolio">
-	<h2 class="text-center">PORTFOLIO</h2>
-	<div class="portfolio-container">
-	  <div class="portfolio-project text-center project1">
-		<p>project 1</p>
-		<img src="http://www.simplesite.com/Images/FrontPage2017/Themes/4.png" alt="">
-	  </div>
-	   <div class="portfolio-project text-center project2">
-		<p>project 2</p>
-		<img src="http://www.simplesite.com/Images/FrontPage2017/Themes/4.png" alt="">
-	  </div>
-	   <div class="portfolio-project text-center project3">
-		<p>project 3</p>
-		<img src="http://www.simplesite.com/Images/FrontPage2017/Themes/4.png" alt="">
-	  </div>
-	   <div class="portfolio-project text-center project4">
-		<p>project 4</p>
-		<img src="http://www.simplesite.com/Images/FrontPage2017/Themes/4.png" alt="">
-	  </div>
-	   <div class="portfolio-project text-center project5">
-		<p>project 5</p>
-		<img src="http://www.simplesite.com/Images/FrontPage2017/Themes/4.png" alt="">
-	  </div>
-	   <div class="portfolio-project text-center project6">
-		<p>project 6</p>
-		<img src="http://www.simplesite.com/Images/FrontPage2017/Themes/4.png" alt="">
-	  </div>
-	</div>
-	</div>
-  
-  <div class="contact" id="contact">
-	<h2 class="text-center">CONTACT</h2>
-	<form action="#">
-	  <input type="text" placeholder="Name"><br>
-	  <input type="text" placeholder="Email address"><br>
-	  <input type="text" placeholder="Subject"><br>
-	  <input type="text" placeholder="Message"><br>
-	  <input type="submit" value="Submit">
-	</form>
-  </div>
-</div></body></html>
+    <!-- JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  </body>
+</html>
