@@ -24,6 +24,15 @@
     </nav>
 
     <div id="hello" class="" data-spy="scroll" data-target="#nav1" offset="0" style="position:relative">
+
+      {% if messages %}
+      <ul class="messages bg-success text-white">
+        {% for message in messages %}
+        <li{% if message.tags %} class="{{ message.tags }} text-center " style="list-style-type: none"{% endif %}>{{ message }}</li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+
     <!-- Background-->
       <h1 class="text-center mt-4 text-danger">Background</h1>
       <div class="container-fluid">
@@ -98,24 +107,10 @@
       <a href="#" id="Contact"></a>
       <h1 class="text-center text-danger mt-5">Contact</h1>
       <div class="mx-auto mb-5" style="width:250px">
-        <form>
-          <div class="form-group">
-            <label for="inputName">Name</label>
-            <input type="text" class="form-control" id="inputName" placeholder="Enter name">
-          </div>
-          <div class="form-group">
-            <label for="inputEmail">Email address</label>
-            <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp" placeholder="Enter email">
-          </div>
-          <div class="form-group">
-            <label for="inputTopic">Topic</label>
-            <input type="text" class="form-control" id="inputTopic" placeholder="Enter topic">
-          </div>
-          <div class="form-group">
-            <label for="inputMessage">Message</label>
-            <input type="text" class="form-control input-lg" id="inputMessage" placeholder="Enter message">
-          </div>
-          <button type="submit" class="btn btn-warning text-white">Submit</button>
+        <form action="/first_app/" method="post">
+          {% csrf_token %}
+          {{ form }}
+          <input type="submit" value="Submit">
         </form>
       </div>
       <h4 class="text-center text-secondary">This webpage is currently under-development.</h4>
